@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #141414; /* Netflix black theme */
+    color: white;
+    padding: 20px;
+}
+.cent{
+    display: flex;
+    justify-content: center;
+}
+#category-select{
+  cursor: pointer;
+}
+#category-select {
+    cursor: pointer;
+}
+
+.container div button{
+    padding: 10px;
+    width: 40%;
+    margin-top: 4px;
+    color: white;
+    font-weight: 500;
+    background-color: #aa2229;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+    box-shadow: 0px 0px 4px 0px gray;
+}
+.container div button:hover{
+    background-color:rgb(206, 23, 23);
+}
+/* Loader Styles */
+#loading-screen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.85);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.loader {
+    border: 5px solid rgba(255, 255, 255, 0.1);
+    border-top: 5px solid #e50914; /* Netflix Red */
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    animation: spin 1s linear infinite;
+}
+
+.product-card {
+    background-color: #1f1f1f;  /* Dark gray */
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.6);
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.product-card:hover {
+    transform: translateY(-5px);
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+/* Dropdown Styling */
+select {
+    width: 200px;
+    padding: 10px;
+    margin-bottom: 20px;
+    font-size: 16px;
+    border-radius: 5px;
+    border: 1px solid #444;
+    background-color: #1f1f1f;
+    color: white;
+}
+
+/* Grid container for products */
+.container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    padding: 20px;
+}
+
+.container div {
+    background-color: #1f1f1f; /* Dark gray for cards */
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.6);
+    padding: 15px;
+    text-align: center;
+    transition: transform 0.2s ease-in-out;
+}
+
+.container div:hover {
+    transform: translateY(-5px);
+}
+
+img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    max-height: 200px;
+    object-fit: cover;
+}
+
+p {
+    color: white;
+    font-size: 16px;
+    margin-top: 10px;
+}
+
+p:first-of-type {
+    font-weight: bold;
+}
+
+p:last-of-type {
+    font-size: 14px;
+    color: #ccc;
+}
+
+
+
+    </style>
+</head>
+<body>
+    <div class="cent">
+    <div class="btn-container">
+        <select id="category-select">
+            <option value="all">All Categories</option> <!-- Default "All" option -->
+        </select>
+    </div>
+</div>
+    <div class="container"></div>
+
+    <script src="./js.js"></script>
+</body>
+
+</html>
