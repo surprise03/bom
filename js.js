@@ -45,7 +45,7 @@ function displayData(products = []) {
 
 // Populate categories in the dropdown
 function populateCategories(products) {
-    const categories = Array.from(new Set(products.map(product => product.category)));
+    let categories = Array.from(new Set(products.map(product => product.category)));
     categories.unshift("all");  // Add "all" as the first option
 
     categories.forEach(category => {
@@ -63,7 +63,7 @@ function populateCategories(products) {
 
 // Filter products by category
 function filterData(selectedCategory, products) {
-    const filteredProducts = selectedCategory === "all"
+    let filteredProducts = selectedCategory === "all"
         ? products
         : products.filter(product => product.category === selectedCategory);
 
@@ -78,7 +78,7 @@ function deleteData(id) {
     let options={
         "method":"DELETE"
     }
-    fetch(`http://localhost:3000/products/${id}`,options)
+    fetch(`https://surprise03.github.io/bom/${id}`,options)
          .then(res=>{
             if(res.ok)
                 alert("data deleted")
