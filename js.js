@@ -78,7 +78,7 @@ function deleteData(id) {
     let options={
         "method":"DELETE"
     }
-    fetch(`https://surprise03.github.io/bom/${id}`,options)
+    fetch(`${url}/${id}`,options)
          .then(res=>{
             if(res.ok)
                 alert("data deleted")
